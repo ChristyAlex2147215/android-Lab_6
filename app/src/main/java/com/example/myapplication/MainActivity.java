@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //for getting the text from the user name
         Intent i=getIntent();
-        String s=i.getStringExtra("username");
+        String s=i.getStringExtra("hello");
         StringBuffer sbuff=new StringBuffer();
         sbuff.append(s).append(", ");
         sbuff.append("Welcome to my app");
@@ -75,5 +75,6 @@ public class MainActivity extends AppCompatActivity {
         Intent i1 = new Intent(this, furnitures.class);
         startActivity(i1);
     }
+
 
 }

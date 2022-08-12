@@ -2,7 +2,9 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class furnitures extends AppCompatActivity {
 
@@ -10,6 +12,12 @@ public class furnitures extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_furnitures);
+
+    }
+    public void shareto(View v)
+    {
+        Intent in1=new Intent(this,sharepage.class);
+        startActivity(in1);
 
     }
 }

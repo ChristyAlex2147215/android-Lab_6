@@ -35,18 +35,33 @@
                     tools:layout_editor_absoluteX="226dp"
                     tools:layout_editor_absoluteY="16dp" />
 
-                <Button
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="#ffffff"
-                    android:textColor="@color/black"
-                    android:text="@string/sofa1_cost"
-                    android:textAlignment="center"
-                    android:textSize="30sp"
-                    android:layout_gravity="center"
-                    tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteX="260dp"
+                    android:orientation="horizontal">
+                        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:textColor="@color/black"
+            android:text="@string/sofa1_cost"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:layout_gravity="center"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="260dp"
                     tools:layout_editor_absoluteY="56dp" />
+                       <ImageButton
+                           android:id="@+id/share1"
+                               android:src="@drawable/ic_baseline_share_24"
+                           android:layout_width="50dp"
+                           android:onClick="shareto"
+                           android:layout_height="wrap_content"
+                               android:layout_gravity="right"
+                               />
+
+                </LinearLayout>
         </LinearLayout>
         </LinearLayout>
         <!--next item-->
