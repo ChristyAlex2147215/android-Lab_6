@@ -16,6 +16,21 @@
     <string name="pass">Password</string>
     <string name="login">Login</string>
     <string name="forgotpass">Forgot Password ?</string>
+    <string name="feedback">Feedback</string>
+    <string name="ratingq">How would you rate us ?</string>
+    <string-array name="spinn">
+        <item>Poor UI</item>
+        <item>Poor Service</item>
+        <item>Lacking Performance</item>
+        <item>Account Problems</item>
+        <item>Other</item>
+    </string-array>
+    <string name="selectgender">Select your gender</string>
+    <string name="male">Male</string>
+    <string name="female">female</string>
+    <string name="contactyou">Would you like to get emails and notification ?</string>
+
+
 
 
 </resources>

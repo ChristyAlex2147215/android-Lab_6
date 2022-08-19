@@ -20,4 +20,9 @@ public class furnitures extends AppCompatActivity {
         startActivity(in1);
 
     }
+    public void feedback(View v)
+    {
+        Intent in2=new Intent(this,feedback.class);
+        startActivity(in2);
+    }
 }
