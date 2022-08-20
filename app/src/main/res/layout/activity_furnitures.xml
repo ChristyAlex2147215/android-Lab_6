@@ -247,7 +247,7 @@
                 <TextView
                     android:id="@+id/contact"
                     android:textSize="25dp"
-                    android:textColor="@color/black"
+                    android:textColor="@color/teal_700"
                     android:onClick="shareto"
                     android:layout_marginLeft="20dp"
                     android:layout_width="wrap_content"
@@ -255,7 +255,8 @@
                     android:text="Contact Us" />
                 <TextView
                     android:id="@+id/feedback"
-                    android:textColor="@color/black"
+                    android:layout_gravity="end"
+                    android:textColor="@color/teal_700"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="60sp"
