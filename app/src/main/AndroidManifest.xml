@@ -4,7 +4,7 @@
     package="com.example.myapplication">
 
     <uses-feature
-        android:name="android.hardware.camera"
+        android:name="android.hardware.camera"/>
         android:required="true" />
 
     <application
@@ -43,5 +43,5 @@
                         </intent-filter>
                     </activity>
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

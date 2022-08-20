@@ -2,28 +2,25 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.app.Activity;
-import android.os.Bundle;
-
-import android.view.View;
-import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Button;
-import android.widget.EditText;
 
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 public class feedback extends AppCompatActivity {
     Button b1;
     EditText ed1;
     private WebView wv1;
+    FloatingActionButton fab = findViewById(R.id.fab);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +29,8 @@ public class feedback extends AppCompatActivity {
         ed1=(EditText)findViewById(R.id.editText);
         wv1=(WebView)findViewById(R.id.webView);
         wv1.setWebViewClient(new MyBrowser());
-    }
+    }//end of the fucntion
+
     public void onClickSubmit(View v)
     {
         CharSequence smg="You have submitted the Feedback";
@@ -47,6 +45,7 @@ public class feedback extends AppCompatActivity {
         });
         sn1.show();
 
+        //method for opening browser view
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,7 +58,18 @@ public class feedback extends AppCompatActivity {
                 wv1.loadUrl(url);
             }
         });
-    }
+        //method for floating point button
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+
+    }//end of the function
+
+    //function for adding browser view in page
     public void borwsee(View v)
     {
         Toast toast = Toast.makeText(feedback.this, "Opening Broser!", Toast.LENGTH_SHORT);
@@ -70,13 +80,89 @@ public class feedback extends AppCompatActivity {
         wv1.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
         wv1.loadUrl(url);
 
-    }
-    //webview function
+    }//end of the function
+    //function for adding browser view in page
     private class MyBrowser extends WebViewClient {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             view.loadUrl(url);
             return true;
         }
-    }
+    }//end of the function
+
+
+
+    //function for confirm on clicking back button
+    @Override
+    public void onBackPressed()
+    {
+
+        // Create the object of
+        // AlertDialog Builder class
+        AlertDialog.Builder builder
+                = new AlertDialog
+                .Builder(feedback.this);
+
+        // Set the message show for the Alert time
+        builder.setMessage("Do you want to exit ?");
+
+        // Set Alert Title
+        builder.setTitle("Alert !");
+
+        // Set Cancelable false
+        // for when the user clicks on the outside
+        // the Dialog Box then it will remain show
+        builder.setCancelable(false);
+
+        // Set the positive button with yes name
+        // OnClickListener method is use of
+        // DialogInterface interface.
+
+        builder
+                .setPositiveButton(
+                        "Yes",
+                        new DialogInterface
+                                .OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int which)
+                            {
+
+                                // When the user click yes button
+                                // then app will close
+                                finish();
+                            }
+                        });
+
+        // Set the Negative button with No name
+        // OnClickListener method is use
+        // of DialogInterface interface.
+        builder
+                .setNegativeButton(
+                        "No",
+                        new DialogInterface
+                                .OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int which)
+                            {
+
+                                // If user click no
+                                // then dialog box is canceled.
+                                dialog.cancel();
+                            }
+                        });
+
+        // Create the Alert dialog
+        AlertDialog alertDialog = builder.create();
+
+        // Show the Alert Dialog box
+        alertDialog.show();
+    }//end of the function
+
+
+
+
 }
